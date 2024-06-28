@@ -17,7 +17,14 @@ const checkCriteria = (cartValue, criteriaData) => {
         ? criteriaData[criteriaOperator]
         : criteriaData; // if criteriaData is not an object then it is "eq" comparison therefore the value is directly given so criteriaValue = criteriaData
 
-    return CRITERIA_COMPARATORS[criteriaOperator](cartValue, criteriaValue);
+    return Array.isArray(cartValue)
+        ? cartValue.some((cartValueElem) =>
+              CRITERIA_COMPARATORS[criteriaOperator](
+                  cartValueElem,
+                  criteriaValue
+              )
+          )
+        : CRITERIA_COMPARATORS[criteriaOperator](cartValue, criteriaValue);
 };
 
 class EligibilityService {
