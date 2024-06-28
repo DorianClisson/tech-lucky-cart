@@ -16,3 +16,5 @@ const getPathValue = (cart, path) => {
             : actualValue[key];
     }, cart);
 };
+
+exports.getPathValue = getPathValue;

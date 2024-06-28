@@ -6,7 +6,7 @@
  * @param criteriaValue
  * @return {boolean}
  */
-export const CRITERIA_COMPARATORS = {
+const CRITERIA_COMPARATORS = {
     eq: (cartValue, criteriaValue) => cartValue == criteriaValue,
     gt: (cartValue, criteriaValue) => cartValue > criteriaValue,
     gte: (cartValue, criteriaValue) => cartValue >= criteriaValue,
@@ -31,3 +31,5 @@ export const CRITERIA_COMPARATORS = {
             )
         ),
 };
+
+exports.CRITERIA_COMPARATORS = CRITERIA_COMPARATORS;

@@ -1,4 +1,5 @@
-import { CRITERIA_COMPARATORS } from "./utils";
+const { CRITERIA_COMPARATORS } = require("./utils/comparison-utils");
+const { getPathValue } = require("./utils/object-utils");
 
 /**
  * Check if a single criteria is fulfilled (= true)
