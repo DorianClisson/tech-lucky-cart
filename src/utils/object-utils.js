@@ -11,6 +11,10 @@
 const getPathValue = (cart, path) => {
     const splittedPath = path.split(".");
     return splittedPath.reduce((actualValue, key) => {
+        // check for no value to prevent getting a nested value of undefined
+        if (actualValue == undefined) {
+            return;
+        }
         return Array.isArray(actualValue)
             ? actualValue.map((arraySubValue) => arraySubValue[key])
             : actualValue[key];
